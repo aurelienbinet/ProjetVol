@@ -66,7 +66,7 @@ public class DaoVolImpl implements DaoVol {
 	public void insert(Vol obj) {
 		
 		SQLRequest_Insert requetes = new SQLRequest_Insert();
-		obj.setId(requetes.insertVol(Context.getInstance(), obj.getDate(), obj.getDate(), obj.getDate(), obj.getDate());
+		obj.setId(requetes.insertVol(Context.getInstance(), obj.getDateDepart(), obj.getDateArrivee(), obj.getHeureDepart(), obj.getHeureArrivee());
 		
 	}
 
@@ -74,7 +74,7 @@ public class DaoVolImpl implements DaoVol {
 	public Vol update(Vol obj) {
 		
 		SQLRequest_Update requetes = new SQLRequest_Update();
-		requetes.updateVol(Context.getInstance(), obj.getDate(), obj.getDate(), obj.getDate(), obj.getDate());
+		requetes.updateVol(Context.getInstance(), obj.getDateDepart(), obj.getDateArrivee(), obj.getHeureDepart(), obj.getHeureArrivee());
 		return obj;
 	}
 
