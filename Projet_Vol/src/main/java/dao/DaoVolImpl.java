@@ -1,32 +1,43 @@
 package dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import sql.*;
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+import model.Reservation;
+import model.Vol;
+import sql.SQLRequest_Select;
+import util.Closer;
+import util.Context;
+
 import java.util.List;
 
 import model.Vol;
-import util.Closer;
 
-import java.beans.Statement;
-import java.sql.ResultSet;
 
 public class DaoVolImpl implements DaoVol {
 	
 	@Override
 	public List<Vol> findAll() {
 		
-		Vol<Vol> vol = new ArrayList<>();
-		SQLRequest_Select request = new SQLRequest_Select();
-		ResultSet rs = request.selectAllVol();
+		List<Vol> vol = new ArrayList<>();
+		SQLRequest_Select requete = new SQLRequest_Select();
+		ResultSet rs = requete.selectAllClient(Context.getInstance());
 		Statement st = null;
 		try {
 			st = rs.getStatement();
 			while(rs.next()) {
-				vol.add(new Vol(rs.getLong("id"), rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee") ////))
-			} catch (Exception e) {
+				vol.add(new Vol(rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee") ));
+			}} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}finally {
+		 finally {
 			Closer.closeResultSet(rs);
-			Closer.closeResultSet(st);
+			Closer.closeStatement(st);
 		}
 		
 		return vol;
@@ -36,51 +47,49 @@ public class DaoVolImpl implements DaoVol {
 	public Vol findByKey(Long key) {
 		
 		Vol vol = null;
-		SQLRequest request = new SQLRequest();
-		ResultSet rs = request.xxxx();
+		SQLRequest_Select requetes = new SQLRequest_Select();
+		ResultSet rs = requetes.selectVolByKey(Context.getInstance(), key);
 		Statement st = null;
 		try {
 			st = rs.getStatement();
 			if(rs.next()) {
-				vol = new Vol(rs.getInt("num_vol") ////)
+				vol = new Vol(rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-//		return vol;
+		return vol;
 	}
 
 	@Override
-	public void insert(Object obj) {
+	public void insert(Vol obj) {
 		
-//		SQLRequest requetes = new SQLRequest();
-//		if (obj instanceof Type1) {
-//			requetes.insertDvd(Context.getInstance()////);
-//		} else if (obj instanceof Type2) {
-//			requetes.insertBluRay(Context.getInstance()////);
-//		}
+		SQLRequest_Insert requetes = new SQLRequest_Insert();
+		obj.setId(requetes.insertVol(Context.getInstance(), obj.getDateDepart(), obj.getDateArrivee(), obj.getHeureDepart(), obj.getHeureArrivee());
 		
 	}
 
 	@Override
-	public Object update(Object obj) {
+	public Vol update(Vol obj) {
 		
-		SQLRequest requetes = new SQLRequest();
-		
-		return null;
+		SQLRequest_Update requetes = new SQLRequest_Update();
+		requetes.updateVol(Context.getInstance(), obj.getDateDepart(), obj.getDateArrivee(), obj.getHeureDepart(), obj.getHeureArrivee());
+		return obj;
 	}
 
 	@Override
-	public void delete(Object obj) {
-		// TODO Auto-generated method stub
+	public void delete(Vol obj) {
+		
+		deleteByKey(obj.getId());
 		
 	}
 
 	@Override
-	public void deleteByKey(Object key) {
-		// TODO Auto-generated method stub
+	public void deleteByKey(Long key) {
 		
+		SQLRequest_Delete requetes = new SQLRequest_Delete();
+		requetes.deleteVol(Context.getInstance(), key);
 	}
 	
 }

@@ -1,75 +1,61 @@
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Vol {
-	
-	private Long id;
-	private Date dateDepart;
-	private Date dateArrivee;
-	private Date heureDepart;
-	private Date heureArrivee;
-	
-	
+
+	private Long id_vol;
+	private Date date_Depart;
+	private Date date_Arrivee;
+	private Date heure_Depart;
+	private Date heure_Arrivee;
+
 	public Vol() {
 		super();
 	}
 
-
-	public Vol(Date dateDepart, Date dateArrivee, Date heureDepart, Date heureArrivee) {
+	public Vol(Date date_Depart, Date date_Arrivee, Date heure_Depart, Date heure_Arrivee) {
 		super();
-		this.dateDepart = dateDepart;
-		this.dateArrivee = dateArrivee;
-		this.heureDepart = heureDepart;
-		this.heureArrivee = heureArrivee;
+		this.date_Depart = date_Depart;
+		this.date_Arrivee = date_Arrivee;
+		this.heure_Depart = heure_Depart;
+		this.heure_Arrivee = heure_Arrivee;
 	}
-
 
 	public Date getDateDepart() {
-		return dateDepart;
+		return date_Depart;
 	}
 
-
-	public void setDateDepart(Date dateDepart) {
-		this.dateDepart = dateDepart;
+	public void setDateDepart(Date date_Depart) {
+		this.date_Depart = date_Depart;
 	}
-
 
 	public Date getDateArrivee() {
-		return dateArrivee;
+		return date_Arrivee;
 	}
 
-
-	public void setDateArrivee(Date dateArrivee) {
-		this.dateArrivee = dateArrivee;
+	public void setDateArrivee(Date date_Arrivee) {
+		this.date_Arrivee = date_Arrivee;
 	}
-
 
 	public Date getHeureDepart() {
-		return heureDepart;
+		return heure_Depart;
 	}
 
-
-	public void setHeureDepart(Date heureDepart) {
-		this.heureDepart = heureDepart;
+	public void setHeureDepart(Date heure_Depart) {
+		this.heure_Depart = heure_Depart;
 	}
-
 
 	public Date getHeureArrivee() {
-		return heureArrivee;
+		return heure_Arrivee;
 	}
 
-
-	public void setHeureArrivee(Date heureArrivee) {
-		this.heureArrivee = heureArrivee;
+	public void setHeureArrivee(Date heure_Arrivee) {
+		this.heure_Arrivee = heure_Arrivee;
 	}
-
 
 	public Long getId() {
-		return id;
+		return id_vol;
 	}
-	
-	
-	
 
 }
