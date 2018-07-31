@@ -1,6 +1,10 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
+
+import model.Vol;
+import util.Closer;
+
 import java.beans.Statement;
 import java.sql.ResultSet;
 
@@ -29,7 +33,7 @@ public class DaoVolImpl implements DaoVol {
 	}
 	
 	@Override
-	public Object findByKey(Object key) {
+	public Vol findByKey(Long key) {
 		
 		Vol vol = null;
 		SQLRequest request = new SQLRequest();
