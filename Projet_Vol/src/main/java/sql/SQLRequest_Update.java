@@ -1,4 +1,4 @@
-package jdbc_projetvol_dao;
+package sql;
 
 import java.sql.Date;
 
@@ -13,9 +13,7 @@ public class SQLRequest_Update {
 	private final static String UPDATE_LOGIN = "update login set login=?,motDePasse=?,admin=? where id_login=?";
 	private final static String UPDATE_VOL = "update vol set date_Depart=?,date_Arrivee=?,heure_Depart=?,heure_Arrivee=? where id_vol=?";
 	private final static String UPDATE_RESERVATION = "update reservation set date=?,numero=? where id_reservation=?";
-<<<<<<< HEAD
 	private final static String UPDATE_PASSAGER = "update passager set nom=?,prenom=? where id_passager=?";
-=======
 	private final static String UPDATE_PASSAGER = "update passager set nom_passager=?,prenom_passager=?,adresse_passager=?,cp_passager=?,ville_passager=?,pays_passager=? where id_passager=?";
 
 	// UPDATE CLIENT
@@ -117,6 +115,5 @@ public class SQLRequest_Update {
 		}
 		return retour;
 	}
->>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 
 }

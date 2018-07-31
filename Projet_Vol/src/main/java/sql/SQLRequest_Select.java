@@ -1,20 +1,11 @@
 package sql;
 
-<<<<<<< HEAD
 import util.Context;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
-=======
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import java.sql.Statement;
-
-import util.Context;
->>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 
 public class SQLRequest_Select {
 	private final static String FIND_ALL_CLIENT = "select * from client";
