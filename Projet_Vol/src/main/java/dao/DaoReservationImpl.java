@@ -1,14 +1,18 @@
 package dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import sql.*;
+import util.*;
 
 import java.sql.Statement;
 import java.sql.ResultSet;
 
 import model.Reservation;
+import model.Client;
+import model.Passager;
 import model.Vol;
 import sql.SQLRequest_Select;
 import util.Closer;
@@ -31,7 +35,7 @@ public class DaoReservationImpl implements DaoReservation {
 		try {
 			st = rs.getStatement();
 			while(rs.next()) {
-				vol.add(new Vol(rs.getInt("numero"), rs.getDate("date"), rs.getPassager(), rs.getClient(), rs.getVol("vol")));
+				reservation.add(new Reservation (rs.getDate("date"), rs.getInt("numero"), (Passager) rs.getObject("passager"), (Client) rs.getObject("client"), (Vol) rs.getObject("vol")));
 			}} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -48,12 +52,12 @@ public class DaoReservationImpl implements DaoReservation {
 		
 		Reservation reservation = null;
 		SQLRequest_Select requetes = new SQLRequest_Select();
-		ResultSet rs = requetes.selectReservationById(Context.getInstance(), key);
+		ResultSet rs = requetes.selectReservationByKey(Context.getInstance(), key);
 		Statement st = null;
 		try {
 			st = rs.getStatement();
 			if(rs.next()) {
-				vol = new Vol(rs.getInt("numero"), rs.getDate("date"), rs.getPassager("passager"), rs.getClient("client"), rs.getVol("vol")));
+				reservation = new Reservation(rs.getDate("date"), rs.getInt("numero"), (Passager) rs.getObject("passager"),(Client) rs.getObject("client"), (Vol) rs.getObject("vol"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -67,7 +71,7 @@ public class DaoReservationImpl implements DaoReservation {
 	public void insert(Reservation obj) {
 		
 		SQLRequest_Insert requetes = new SQLRequest_Insert();
-		obj.setNumero(requetes.insertReservation(Context.getInstance(), obj.getDate(), obj.getPassager(), obj.getClient(), obj.getVol()));
+		obj.setNumero(requetes.insertReservation(Context.getInstance(), obj.getDate(), obj.getId()));
 		
 	}
 
@@ -75,7 +79,7 @@ public class DaoReservationImpl implements DaoReservation {
 	public Reservation update(Reservation obj) {
 		
 		SQLRequest_Update requetes = new SQLRequest_Update();
-		requetes.updateReservation(Context.getInstance(), obj.getDate(), obj.getPassager(), obj.getClient(), obj.getVol());
+		requetes.updateReservation(Context.getInstance(), obj.getDate(), obj.getNumero());
 		return obj;
 	}
 
