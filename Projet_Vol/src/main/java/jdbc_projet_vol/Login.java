@@ -6,6 +6,7 @@ public class Login {
 	private String login;
 	private String motDePasse;
 	private Boolean admin;
+	private Client client;
 	
 	public Login(String login, String motDePasse, Boolean admin) {
 		super();
@@ -15,6 +16,16 @@ public class Login {
 	}
 	
 	
+
+	public Login(String login, String motDePasse, Boolean admin, Client client) {
+		super();
+		this.login = login;
+		this.motDePasse = motDePasse;
+		this.admin = admin;
+		this.client = client;
+	}
+
+
 
 	public Login() {
 		super();
@@ -48,6 +59,18 @@ public class Login {
 
 	public Long getId() {
 		return id;
+	}
+
+
+
+	public Client getClient() {
+		return client;
+	}
+
+
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	
 	
