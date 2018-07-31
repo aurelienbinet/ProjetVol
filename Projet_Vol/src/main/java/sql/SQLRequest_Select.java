@@ -33,12 +33,12 @@ public class SQLRequest_Select {
 	}
 
 	// SELECTIONNER UN CLIENT AVEC UN ID
-	public ResultSet selectClientByKey(Context ctx, int id_client) {
+	public ResultSet selectClientByKey(Context ctx, Long id_client) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(FIND_CLIENT_BY_ID);
-			ps.setInt(1, id_client);
+			ps.setLong(1, id_client);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,12 +60,12 @@ public class SQLRequest_Select {
 	}
 
 	// SELECTIONNER UN LOGIN AVEC UN ID
-	public ResultSet selectLoginByKey(Context ctx, int id_login) {
+	public ResultSet selectLoginByKey(Context ctx, Long id_login) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(FIND_LOGIN_BY_ID);
-			ps.setInt(1, id_login);
+			ps.setLong(1, id_login);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,12 +87,12 @@ public class SQLRequest_Select {
 	}
 
 	// SELECTIONNER UN VOL AVEC UN ID
-	public ResultSet selectVolByKey(Context ctx, int id_vol) {
+	public ResultSet selectVolByKey(Context ctx, Long id_vol) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(FIND_VOL_BY_ID);
-			ps.setInt(1, id_vol);
+			ps.setLong(1, id_vol);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -114,12 +114,12 @@ public class SQLRequest_Select {
 	}
 
 	// SELECTIONNER UNE RESERVATION AVEC UN ID
-	public ResultSet selectReservationByKey(Context ctx, int id_reservation) {
+	public ResultSet selectReservationByKey(Context ctx, Long id_reservation) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(FIND_RESERVATION_BY_ID);
-			ps.setInt(1, id_reservation);
+			ps.setLong(1, id_reservation);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -141,12 +141,12 @@ public class SQLRequest_Select {
 	}
 
 	// SELECTIONNER UN PASSAGER AVEC UN ID
-	public ResultSet selectPassagerByKey(Context ctx, int id_passager) {
+	public ResultSet selectPassagerByKey(Context ctx, Long id_passager) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(FIND_PASSAGER_BY_ID);
-			ps.setInt(1, id_passager);
+			ps.setLong(1, id_passager);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();

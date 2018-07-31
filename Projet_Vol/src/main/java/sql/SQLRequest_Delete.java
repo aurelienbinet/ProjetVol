@@ -15,12 +15,12 @@ public class SQLRequest_Delete {
 	private final static String DELETE_PASSAGER = "delete from passager where id_passager=?";
 
 	// SUPPRIMER UN CLIENT
-	public int deleteClient(Context ctx, int id_client) {
+	public int deleteClient(Context ctx, Long id_client) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_CLIENT);
-			ps.setInt(1, id_client);
+			ps.setLong(1, id_client);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -31,12 +31,12 @@ public class SQLRequest_Delete {
 	}
 
 	// SUPPRIMER UN LOGIN
-	public int deleteLogin(Context ctx, int id_login) {
+	public int deleteLogin(Context ctx, Long id_login) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_LOGIN);
-			ps.setInt(1, id_login);
+			ps.setLong(1, id_login);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,12 +47,12 @@ public class SQLRequest_Delete {
 	}
 
 	// SUPPRIMER UN VOL
-	public int deleteVol(Context ctx, int id_vol) {
+	public int deleteVol(Context ctx, Long id_vol) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_VOL);
-			ps.setInt(1, id_vol);
+			ps.setLong(1, id_vol);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,12 +63,12 @@ public class SQLRequest_Delete {
 	}
 
 	// SUPPRIMER UNE RESERVATION
-	public int deleteReservation(Context ctx, int id_reservation) {
+	public int deleteReservation(Context ctx, Long id_reservation) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_RESERVATION);
-			ps.setInt(1, id_reservation);
+			ps.setLong(1, id_reservation);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -79,12 +79,12 @@ public class SQLRequest_Delete {
 	}
 
 	// SUPPRIMER UN PASSAGER
-	public int deletePassager(Context ctx, int id_passager) {
+	public int deletePassager(Context ctx, Long id_passager) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_PASSAGER);
-			ps.setInt(1, id_passager);
+			ps.setLong(1, id_passager);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
