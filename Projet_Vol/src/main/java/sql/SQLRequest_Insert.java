@@ -1,10 +1,7 @@
 package jdbc_projetvol_dao;
 
 import java.sql.Date;
-<<<<<<< HEAD
-=======
 
->>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
