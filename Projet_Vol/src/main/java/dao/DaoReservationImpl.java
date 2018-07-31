@@ -6,7 +6,7 @@ import java.util.List;
 
 import sql.*;
 import util.*;
-
+import java.util.Date;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
@@ -30,7 +30,7 @@ public class DaoReservationImpl implements DaoReservation {
 
 		List<Reservation> reservation = new ArrayList<>();
 		SQLRequest_Select requete = new SQLRequest_Select();
-		ResultSet rs = requete.selectAllClient(Context.getInstance());
+		ResultSet rs = requete.selectAllClient(util.Context.getInstance());
 		Statement st = null;
 		try {
 			st = rs.getStatement();
@@ -41,7 +41,7 @@ public class DaoReservationImpl implements DaoReservation {
 			}
 		 finally {
 			Closer.closeResultSet(rs);
-			Closer.closeResultSet(st);
+			Closer.closeStatement(st);
 		}
 		
 		return reservation;
@@ -79,7 +79,7 @@ public class DaoReservationImpl implements DaoReservation {
 	public Reservation update(Reservation obj) {
 		
 		SQLRequest_Update requetes = new SQLRequest_Update();
-		requetes.updateReservation(Context.getInstance(), obj.getDate(), obj.getNumero());
+		requetes.updateReservation(util.Context.getInstance(), obj.getDate(), obj.getNumero());
 		return obj;
 	}
 

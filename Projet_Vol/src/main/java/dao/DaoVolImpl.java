@@ -48,7 +48,7 @@ public class DaoVolImpl implements DaoVol {
 		
 		Vol vol = null;
 		SQLRequest_Select requetes = new SQLRequest_Select();
-		ResultSet rs = requetes.selectVolById(Context.getInstance(), key);
+		ResultSet rs = requetes.selectVolByKey(Context.getInstance(), key);
 		Statement st = null;
 		try {
 			st = rs.getStatement();
