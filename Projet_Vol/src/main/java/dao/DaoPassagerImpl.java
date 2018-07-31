@@ -1,6 +1,6 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -18,6 +18,7 @@ public class DaoPassagerImpl implements DaoPassager {
 
 	@Override
 	public List<Passager> findAll() {
+<<<<<<< HEAD
 		List<Passager> passagers = new ArrayList<>();
 		SQLRequest_Select requetes = new SQLRequest_Select();
 		ResultSet rs = requetes.selectAllPassager(util.Context.getInstance());
@@ -34,6 +35,10 @@ public class DaoPassagerImpl implements DaoPassager {
 			util.Closer.closeResultSet(rs);
 		}
 		return passagers;
+=======
+		// TODO Auto-generated method stub
+		return null;
+>>>>>>> 41c412eb69bef49691a00be4b0dec81458fc21f7
 	}
 	
 	@Override

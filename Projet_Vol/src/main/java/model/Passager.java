@@ -1,17 +1,17 @@
 package model;
 
 public class Passager {
-	
-	private Long id;
-	private String nom;
-	private String prenom;
-	private Adresse adresse;
-	
-	public Passager(String nom, String prenom, Adresse adresse) {
+
+	private Long id_passager;
+	private String nom_passager;
+	private String prenom_passager;
+	private Adresse adresse_passager;
+
+	public Passager(String nom_passager, String prenom_passager, Adresse adresse_passager) {
 		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
+		this.nom_passager = nom_passager;
+		this.prenom_passager = prenom_passager;
+		this.adresse_passager = adresse_passager;
 	}
 
 	
@@ -21,40 +21,35 @@ public class Passager {
 	}
 
 	public Long getId() {
-		return id;
+		return id_passager;
 	}
-	
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long id_passager) {
+		this.id_passager = id_passager;
 	}
 
 	public String getNom() {
-		return nom;
+		return nom_passager;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setNom(String nom_passager) {
+		this.nom_passager = nom_passager;
 	}
 
 	public String getPrenom() {
-		return prenom;
+		return prenom_passager;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setPrenom(String prenom_passager) {
+		this.prenom_passager = prenom_passager;
 	}
 
 	public Adresse getAdresse() {
-		return adresse;
+		return adresse_passager;
 	}
 
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
+	public void setAdresse(Adresse adresse_passager) {
+		this.adresse_passager = adresse_passager;
 	}
-	
-	
-	
-	
 
 }
