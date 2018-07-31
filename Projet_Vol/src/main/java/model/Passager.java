@@ -14,6 +14,8 @@ public class Passager {
 		this.adresse = adresse;
 	}
 
+	
+	
 	public Passager() {
 		super();
 	}
