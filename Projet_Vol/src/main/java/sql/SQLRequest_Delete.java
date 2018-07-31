@@ -1,4 +1,4 @@
-package sql;
+package jdbc_projetvol_dao;
 
 public class SQLRequest_Delete {
 	private final static String DELETE_CLIENT = "delete from client where id_client=?";
