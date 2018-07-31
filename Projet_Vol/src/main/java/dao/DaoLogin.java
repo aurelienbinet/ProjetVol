@@ -1,5 +1,7 @@
 package dao;
 
-public interface DaoLogin extends DaoGeneric {
+import model.Login;
+
+public interface DaoLogin extends DaoGeneric<Login, Long> {
 
 }
