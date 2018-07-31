@@ -1,4 +1,4 @@
-package jdbc_projetVol_dao;
+package jdbc_projetvol_dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

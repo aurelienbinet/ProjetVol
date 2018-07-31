@@ -1,4 +1,4 @@
-package jdbc_projetVol_dao;
+package jdbc_projetvol_dao;
 
 public class SQLRequest_Select {
 	private final static String FIND_ALL_CLIENT = "select * from client";

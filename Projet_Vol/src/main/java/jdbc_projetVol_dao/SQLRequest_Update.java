@@ -1,4 +1,4 @@
-package jdbc_projetVol_dao;
+package jdbc_projetvol_dao;
 
 public class SQLRequest_Update {
 	private final static String UPDATE_CLIENT = "update client set nom=?,numeroTel=?,numeroFax=?,email=? where id_client=?";

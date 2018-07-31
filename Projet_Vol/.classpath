@@ -29,33 +29,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-=======
-<<<<<<< HEAD
-	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-=======
-<<<<<<< HEAD
-	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-=======
->>>>>>> bf71f9038821eb3231df8518115bc676a6111ed3
-	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
-<<<<<<< HEAD
-=======
->>>>>>> b47a9d08e6c86c6d8aa1b0f5e0ea9c50aecb5a3f
->>>>>>> bf71f9038821eb3231df8518115bc676a6111ed3
->>>>>>> 69ac24b7a3714b45bb4d6b10ea934130edbb6f58
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
