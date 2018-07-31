@@ -1,6 +1,6 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
 
 public interface DaoGeneric<T, K> {
 	

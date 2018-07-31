@@ -1,5 +1,7 @@
 package dao;
 
-public interface DaoReservation extends DaoGeneric {
+import model.Reservation;
+
+public interface DaoReservation extends DaoGeneric<Reservation, Long> {
 
 }
