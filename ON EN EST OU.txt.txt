@@ -1,0 +1,9 @@
+Thomas : - Créer package SQLRequest + 4 classes de requetes : INSERT, SELECT, UPDATE, DELETE
+
+Kim : - Créer BDD sur pgAdmin3 + 5 tables : Vol, Client, Reservation, Passager, Login 
+
+Jimmy :
+
+Aurelien : Créer toutes les classes : Adresse, Vol, Client, Reservation, Passager, Login, ClientPhysique, ClientMoral, ClientEl
+
+Hugo : Créer les DAOs : DaoGenerique, DaoAdresse, DaoVol, DaoClient, DaoReservation, DaoPassager, DaoLogin
