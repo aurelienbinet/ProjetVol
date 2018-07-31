@@ -1,4 +1,4 @@
-package jdbc_projetvol_dao;
+package sql;
 
 import java.sql.Date;
 
@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import jdbc.util.Closer;
-import jdbc.util.Context;
+import util.Closer;
+import util.Context;
 
 public class SQLRequest_Insert {
 	private final static String INSERT_CLIENT_PHYSIQUE = "insert into client(id_client,prenom ,nom,numeroTel,numeroFax,email,adresse,cp,ville,pays, titre) values(nextval('seq_client'),?,?,?,?,?,?,?,?,?,?)";
@@ -195,26 +195,20 @@ public class SQLRequest_Insert {
 	}
 
 	// INSERER UN PASSAGER
-<<<<<<< HEAD
-	public int insertPassager(Context ctx, String nom, String prenom, String adresse_passager,
-=======
+
 	public int insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager,
->>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
+
 			String cp_passager, String ville_passager, String pays_passager) {
 		PreparedStatement ps = null;
 		Statement st = null;
 		int numeroGenere = -1;
 		ResultSet rs = null;
 		try {
-<<<<<<< HEAD
-			ps = ctx.getConnection().prepareStatement(INSERT_CLIENT);
-			ps.setString(1, nom);
-			ps.setString(2, prenom);
-=======
+
 			ps = ctx.getConnection().prepareStatement(INSERT_PASSAGER);
 			ps.setString(1, nom_passager);
 			ps.setString(2, prenom_passager);
->>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
+
 			ps.setString(3, adresse_passager);
 			ps.setString(4, cp_passager);
 			ps.setString(6, ville_passager);

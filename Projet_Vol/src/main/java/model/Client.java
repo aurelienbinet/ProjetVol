@@ -2,11 +2,8 @@ package model;
 
 public abstract class Client {
 
-<<<<<<< HEAD
-	private Long id;
-=======
+
 	private Long id_client;
->>>>>>> a321a630c9083a0a9a3ecf78f2981b6130789927
 	private String nom;
 	private Integer numeroTel;
 	private Integer numeroFax;
@@ -37,13 +34,10 @@ public abstract class Client {
 		super();
 	}
 
-<<<<<<< HEAD
-	public void setId(Long i) {
-		this.id = i;
-=======
+
 	public void setId(Long id_client) {
 		this.id_client = id_client;
->>>>>>> a321a630c9083a0a9a3ecf78f2981b6130789927
+
 	}
 
 	public Long getId() {
@@ -81,7 +75,7 @@ public abstract class Client {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-<<<<<<< HEAD
+
 
 	public Adresse getAdresse() {
 		return adresse;
@@ -98,7 +92,6 @@ public abstract class Client {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
-=======
->>>>>>> a321a630c9083a0a9a3ecf78f2981b6130789927
+
 
 }
