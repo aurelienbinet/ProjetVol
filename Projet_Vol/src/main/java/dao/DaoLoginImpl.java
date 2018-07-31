@@ -1,15 +1,15 @@
-package jdbc_projetvol_dao;
+package dao;
 
 import java.awt.List;
 
-public class DaoClientImpl implements DaoClient {
+public class DaoLoginImpl implements DaoLogin {
 
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public Object findByKey(Object key) {
 		// TODO Auto-generated method stub

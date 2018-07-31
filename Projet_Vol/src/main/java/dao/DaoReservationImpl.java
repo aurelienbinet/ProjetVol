@@ -1,15 +1,18 @@
-package jdbc_projetvol_dao;
+package dao;
 
-public class DaoVolImpl implements DaoVol {
+import java.awt.List;
 
+public class DaoReservationImpl implements DaoReservation {
+	
+	@Override
+	public List<Object> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	@Override
 	public Object findByKey(Object key) {
-		
-//		Vol vol = null;
-//		SQLRequest request = new SQLRequest();
-//		ResultSet rs = request.xxxx();
-		
-		
+		// TODO Auto-generated method stub
 		return null;
 	}
 

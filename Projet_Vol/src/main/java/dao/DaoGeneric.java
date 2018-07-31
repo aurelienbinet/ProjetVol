@@ -1,10 +1,10 @@
-package jdbc_projetvol_dao;
+package dao;
 
 import java.awt.List;
 
 public interface DaoGeneric<T, K> {
 	
-	//List<T> findAll();
+	List<T> findAll();
 
 	T findByKey(K key);
 

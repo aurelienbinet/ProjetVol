@@ -1,4 +1,4 @@
-package jdbc_projet_vol;
+package model;
 
 public class ClientMoral extends Client {
 	

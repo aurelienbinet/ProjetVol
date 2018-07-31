@@ -1,4 +1,4 @@
-package jdbc_projetvol_dao;
+package dao;
 
 public interface DaoReservation extends DaoGeneric {
 

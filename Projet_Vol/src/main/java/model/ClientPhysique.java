@@ -1,23 +1,27 @@
-package jdbc_projet_vol;
+package model;
 
-public class ClientEl extends Client {
+public class ClientPhysique extends Client {
 	
 	private String titre = "TitrePhysique";
 	private String prenom;
 	
-	public ClientEl() {
+	public ClientPhysique() {
 		super();
 		
 	}
 	
-	public ClientEl(String prenom , String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse) {
+	public ClientPhysique(String prenom , String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse) {
 		super(nom, numeroTel, numeroFax, email, adresse);
 		this.prenom=prenom;
 	}
-	public ClientEl(String prenom , String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse, Login login) {
+	
+	
+	public ClientPhysique(String prenom , String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse, Login login) {
 		super(nom, numeroTel, numeroFax, email, adresse, login);
 		this.prenom=prenom;
 	}
+	
+	
 
 	public String getPrenom() {
 		return prenom;
@@ -30,6 +34,9 @@ public class ClientEl extends Client {
 	public String getTitre() {
 		return titre;
 	}
+	
+	
+	
 	
 
 }
