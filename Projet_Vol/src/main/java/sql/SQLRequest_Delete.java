@@ -15,12 +15,12 @@ public class SQLRequest_Delete {
 	private final static String DELETE_PASSAGER = "delete from passager where id_passager=?";
 
 	// SUPPRIMER UN CLIENT
-	public int deleteClient(Context ctx, int id_client) {
+	public int deleteClient(Context ctx, Long id_client) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(DELETE_CLIENT);
-			ps.setInt(1, id_client);
+			ps.setLong(1, id_client);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
