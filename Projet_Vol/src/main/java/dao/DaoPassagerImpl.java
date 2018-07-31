@@ -3,31 +3,57 @@ package dao;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import jdbc.util.Closer;
 import jdbc.util.Context;
 import jdbc_projetvol_dao.SQLRequest_Insert;
-import model.Adherent;
+import model.Adresse;
 import model.Passager;
 import sql.SQLRequest_Delete;
+import sql.SQLRequest_Select;
 import sql.SQLRequest_Update;
 
 public class DaoPassagerImpl implements DaoPassager {
 
 	@Override
 	public List<Passager> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Passager> passagers = new ArrayList<>();
+		SQLRequest_Select requetes = new SQLRequest_Select();
+		ResultSet rs = requetes.selectAllPassager(util.Context.getInstance());
+		Statement st = null;
+		try {
+			st = rs.getStatement();
+			while (rs.next()) {
+				passagers.add(new Passager(rs.getString("nom"), rs.getString("prenom"), (Adresse) rs.getObject("adresse")));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			util.Closer.closeResultSet(rs);
+			util.Closer.closeResultSet(rs);
+		}
+		return passagers;
 	}
-
+	
 	@Override
-	public Object findByKey(Object key) {
-		
-		// TODO Auto-generated method stub
-		
-		
-		
-		return null;
+	public Passager findByKey(Long key) {
+		Passager passager = null;
+		SQLRequest_Select requetes = new SQLRequest_Select();
+		ResultSet rs = requetes.selectPassagerByKey(util.Context.getInstance(), key);
+		Statement st = null;
+		try {
+			st = rs.getStatement();
+			if (rs.next()) {
+				passager = new Passager(rs.getString("nom"), rs.getString("prenom"), (Adresse) rs.getObject("adresse"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			util.Closer.closeResultSet(rs);
+			util.Closer.closeStatement(st);
+		}
+		return passager;
 	}
 
 	@Override

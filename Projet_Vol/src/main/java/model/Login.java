@@ -1,21 +1,19 @@
 package model;
 
 public class Login {
-	
-	private Long id;
+
+	private Long id_login;
 	private String login;
 	private String motDePasse;
 	private Boolean admin;
 	private Client client;
-	
+
 	public Login(String login, String motDePasse, Boolean admin) {
 		super();
 		this.login = login;
 		this.motDePasse = motDePasse;
 		this.admin = admin;
 	}
-	
-	
 
 	public Login(String login, String motDePasse, Boolean admin, Client client) {
 		super();
@@ -25,19 +23,13 @@ public class Login {
 		this.client = client;
 	}
 
-
-
 	public Login() {
 		super();
 	}
 
-	
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long id_login) {
+		this.id_login = id_login;
 	}
-
-
 
 	public String getLogin() {
 		return login;
@@ -64,24 +56,15 @@ public class Login {
 	}
 
 	public Long getId() {
-		return id;
+		return id_login;
 	}
-
-
 
 	public Client getClient() {
 		return client;
 	}
 
-
-
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
-	
-	
-	
-	
 
 }
