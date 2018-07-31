@@ -1,6 +1,6 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -15,7 +15,7 @@ import sql.SQLRequest_Update;
 public class DaoPassagerImpl implements DaoPassager {
 
 	@Override
-	public List<Object> findAll() {
+	public List<Passager> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
