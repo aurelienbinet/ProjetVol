@@ -1,4 +1,4 @@
-package dao;
+package sql;
 
 import java.sql.Date;
 
@@ -127,14 +127,14 @@ public class SQLRequest_Insert {
 	}
 
 	// INSERER UN PASSAGER
-	public int insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager, String cp_passager,
-			String ville_passager, String pays_passager) {
+	public int insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager,
+			String cp_passager, String ville_passager, String pays_passager) {
 		PreparedStatement ps = null;
 		Statement st = null;
 		int numeroGenere = -1;
 		ResultSet rs = null;
 		try {
-			ps = ctx.getConnection().prepareStatement(INSERT_CLIENT);
+			ps = ctx.getConnection().prepareStatement(INSERT_PASSAGER);
 			ps.setString(1, nom_passager);
 			ps.setString(2, prenom_passager);
 			ps.setString(3, adresse_passager);
