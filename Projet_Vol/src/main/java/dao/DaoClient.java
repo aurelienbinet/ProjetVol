@@ -1,8 +1,10 @@
 package dao;
 
-import java.awt.List;
 
-public interface DaoClient extends DaoGeneric{
+
+import model.Client;
+
+public interface DaoClient extends DaoGeneric<Client, Long>{
 
 	
 }

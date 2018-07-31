@@ -1,6 +1,10 @@
 package jdbc_projetvol_dao;
 
 import java.sql.Date;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -126,16 +130,26 @@ public class SQLRequest_Insert {
 	}
 
 	// INSERER UN PASSAGER
+<<<<<<< HEAD
 	public int insertPassager(Context ctx, String nom, String prenom, String adresse_passager,
+=======
+	public int insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager,
+>>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 			String cp_passager, String ville_passager, String pays_passager) {
 		PreparedStatement ps = null;
 		Statement st = null;
 		int numeroGenere = -1;
 		ResultSet rs = null;
 		try {
+<<<<<<< HEAD
 			ps = ctx.getConnection().prepareStatement(INSERT_CLIENT);
 			ps.setString(1, nom);
 			ps.setString(2, prenom);
+=======
+			ps = ctx.getConnection().prepareStatement(INSERT_PASSAGER);
+			ps.setString(1, nom_passager);
+			ps.setString(2, prenom_passager);
+>>>>>>> 1fd5f1752d15b979555204aa2ef355feaff355ce
 			ps.setString(3, adresse_passager);
 			ps.setString(4, cp_passager);
 			ps.setString(6, ville_passager);

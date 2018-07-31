@@ -1,32 +1,37 @@
 package dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import sql.*;
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+import model.Reservation;
+import model.Vol;
 import sql.SQLRequest_Select;
 import util.Closer;
 import util.Context;
 
-import java.sql.ResultSet;
-
- import java.sql.PreparedStatement;
-
-import java.awt.List;
-import java.beans.Statement;
-import java.sql.*;
+import java.util.List;
 
 import model.Vol;
+
 
 public class DaoVolImpl implements DaoVol {
 	
 	@Override
 	public List<Vol> findAll() {
 		
-		Vol<Vol> vol = new ArrayList<>();
+		List<Vol> vol = new ArrayList<>();
 		SQLRequest_Select requete = new SQLRequest_Select();
 		ResultSet rs = requete.selectAllClient(Context.getInstance());
 		Statement st = null;
 		try {
 			st = rs.getStatement();
 			while(rs.next()) {
-				vol.add(new Vol(rs.getInt("id"), rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee") ))
+				vol.add(new Vol(rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee") ));
 			}} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -39,7 +44,7 @@ public class DaoVolImpl implements DaoVol {
 	}
 	
 	@Override
-	public Vol findByKey(Object key) {
+	public Vol findByKey(Long key) {
 		
 		Vol vol = null;
 		SQLRequest_Select requetes = new SQLRequest_Select();
@@ -48,7 +53,7 @@ public class DaoVolImpl implements DaoVol {
 		try {
 			st = rs.getStatement();
 			if(rs.next()) {
-				vol = new Vol(rs.getInt("id"), rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee"))
+				vol = new Vol(rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -61,7 +66,7 @@ public class DaoVolImpl implements DaoVol {
 	public void insert(Vol obj) {
 		
 		SQLRequest_Insert requetes = new SQLRequest_Insert();
-		obj.setId(requetes.insertVol(Context.getInstance(), rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee"));
+		obj.setId(requetes.insertVol(Context.getInstance(), obj.getDate(), obj.getDate(), obj.getDate(), obj.getDate());
 		
 	}
 
@@ -69,7 +74,7 @@ public class DaoVolImpl implements DaoVol {
 	public Vol update(Vol obj) {
 		
 		SQLRequest_Update requetes = new SQLRequest_Update();
-		requetes.updateVol(Context.getInstance(), rs.getDate("dateDepart"), rs.getDate("dateArrivee"), rs.getDate("heureDepart"), rs.getDate("heureArrivee"))
+		requetes.updateVol(Context.getInstance(), obj.getDate(), obj.getDate(), obj.getDate(), obj.getDate());
 		return obj;
 	}
 
@@ -81,10 +86,10 @@ public class DaoVolImpl implements DaoVol {
 	}
 
 	@Override
-	public void deleteByKey(Object key) {
+	public void deleteByKey(Long key) {
 		
 		SQLRequest_Delete requetes = new SQLRequest_Delete();
-		requetes.deleteByKey(Context.getInstance(), key);
+		requetes.deleteVol(Context.getInstance(), key);
 	}
 	
 }

@@ -1,41 +1,43 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
+
+import model.Login;
 
 public class DaoLoginImpl implements DaoLogin {
 
 	@Override
-	public List findAll() {
+	public List<Login> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public Object findByKey(Object key) {
+	public Login findByKey(Long key) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void insert(Object obj) {
+	public void insert(Login obj) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Object update(Object obj) {
+	public Login update(Login obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void delete(Object obj) {
+	public void delete(Login obj) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteByKey(Object key) {
+	public void deleteByKey(Long key) {
 		// TODO Auto-generated method stub
 		
 	}

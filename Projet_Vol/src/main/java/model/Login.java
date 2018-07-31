@@ -31,6 +31,12 @@ public class Login {
 		super();
 	}
 
+	
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 
 
 	public String getLogin() {
