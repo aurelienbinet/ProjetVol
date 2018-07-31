@@ -37,7 +37,7 @@ public class DaoVolImpl implements DaoVol {
 			}
 		 finally {
 			Closer.closeResultSet(rs);
-			Closer.closeResultSet(st);
+			Closer.closeStatement(st);
 		}
 		
 		return vol;
