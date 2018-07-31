@@ -1,5 +1,7 @@
 package dao;
 
-public interface DaoVol extends DaoGeneric {
+import model.Vol;
+
+public interface DaoVol extends DaoGeneric<Vol, Long> {
 
 }

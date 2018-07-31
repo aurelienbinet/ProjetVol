@@ -43,6 +43,13 @@ public abstract class Client {
 		super();
 	}
 
+	
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
 
 
 	public Long getId() {

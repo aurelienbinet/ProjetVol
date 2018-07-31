@@ -1,41 +1,43 @@
 package dao;
 
-import java.awt.List;
+import java.util.List;
+
+import model.Client;
 
 public class DaoClientImpl implements DaoClient {
 
 	@Override
-	public List findAll() {
+	public List<Client> findAll() {
+		
+		return null;
+	}
+
+	@Override
+	public Client findByKey(Long key) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object findByKey(Object key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insert(Object obj) {
+	public void insert(Client obj) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Object update(Object obj) {
+	public Client update(Client obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void delete(Object obj) {
+	public void delete(Client obj) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteByKey(Object key) {
+	public void deleteByKey(Long key) {
 		// TODO Auto-generated method stub
 		
 	}
