@@ -1,7 +1,15 @@
 package jdbc_projetvol_dao;
 
-public class DaoReservationImpl implements DaoReservation {
+import java.awt.List;
 
+public class DaoReservationImpl implements DaoReservation {
+	
+	@Override
+	public List<Object> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	@Override
 	public Object findByKey(Object key) {
 		// TODO Auto-generated method stub
