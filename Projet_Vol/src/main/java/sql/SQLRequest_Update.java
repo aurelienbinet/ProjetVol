@@ -9,20 +9,54 @@ import util.Closer;
 import util.Context;
 
 public class SQLRequest_Update {
-	private final static String UPDATE_CLIENT = "update client set nom=?,numeroTel=?,numeroFax=?,email=?,adresse=?,cp=?,ville=?,pays=? where id_client=?";
+	private final static String UPDATE_CLIENT_PHYSIQUE = "update client set nom=?, prenom=?,numeroTel=?,numeroFax=?,email=?,adresse=?,cp=?,ville=?,pays=?, titre=? where id_client=?";
+	private final static String UPDATE_CLIENT_MORAL = "update client set nom=?,numeroTel=?,numeroFax=?,email=?,adresse=?,cp=?,ville=?,pays=?, siret=?, titre=? where id_client=?";
+	private final static String UPDATE_CLIENT_EL = "update client set nom=?, prenom=?,numeroTel=?,numeroFax=?,email=?,adresse=?,cp=?,ville=?,pays=?, titre=? where id_client=?";
 	private final static String UPDATE_LOGIN = "update login set login=?,motDePasse=?,admin=? where id_login=?";
 	private final static String UPDATE_VOL = "update vol set date_Depart=?,date_Arrivee=?,heure_Depart=?,heure_Arrivee=? where id_vol=?";
 	private final static String UPDATE_RESERVATION = "update reservation set date=?,numero=? where id_reservation=?";
+<<<<<<< HEAD
 	private final static String UPDATE_PASSAGER = "update passager set nom=?,prenom=? where id_passager=?";
+=======
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> d3ddf2148325f0c8cb7c76140761fbbc7aafc9e2
+>>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 	private final static String UPDATE_PASSAGER = "update passager set nom_passager=?,prenom_passager=?,adresse_passager=?,cp_passager=?,ville_passager=?,pays_passager=? where id_passager=?";
 
 	// UPDATE CLIENT
-	public int updateClient(Context ctx, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
-			String cp, String ville, String pays) {
+	public int updateClientPhysique(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
+			String cp, String ville, String pays, String titre) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
-			ps = ctx.getConnection().prepareStatement(UPDATE_CLIENT);
+			ps = ctx.getConnection().prepareStatement(UPDATE_CLIENT_PHYSIQUE);
+			ps.setString(1, nom);
+			ps.setString(2, prenom);
+			ps.setInt(3, numeroTel);
+			ps.setInt(4, numeroFax);
+			ps.setString(5, email);
+			ps.setString(6, adresse);
+			ps.setString(7, cp);
+			ps.setString(8, ville);
+			ps.setString(9, pays);
+			ps.setString(10, titre);
+			retour = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Closer.closeStatement(ps);
+		}
+		return retour;
+	}
+	public int updateClientMoral(Context ctx, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
+			String cp, String ville, String pays,String siret, String titre) {
+		int retour = 0;
+		PreparedStatement ps = null;
+		try {
+			ps = ctx.getConnection().prepareStatement(UPDATE_CLIENT_MORAL);
 			ps.setString(1, nom);
 			ps.setInt(2, numeroTel);
 			ps.setInt(3, numeroFax);
@@ -31,6 +65,32 @@ public class SQLRequest_Update {
 			ps.setString(6, cp);
 			ps.setString(7, ville);
 			ps.setString(8, pays);
+			ps.setString(9, siret);
+			ps.setString(10, titre);
+			retour = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Closer.closeStatement(ps);
+		}
+		return retour;
+	}
+	public int updateClientEl(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
+			String cp, String ville, String pays, String titre) {
+		int retour = 0;
+		PreparedStatement ps = null;
+		try {
+			ps = ctx.getConnection().prepareStatement(UPDATE_CLIENT_EL);
+			ps.setString(1, nom);
+			ps.setString(2, prenom);
+			ps.setInt(3, numeroTel);
+			ps.setInt(4, numeroFax);
+			ps.setString(5, email);
+			ps.setString(6, adresse);
+			ps.setString(7, cp);
+			ps.setString(8, ville);
+			ps.setString(9, pays);
+			ps.setString(10, titre);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -115,5 +175,9 @@ public class SQLRequest_Update {
 		}
 		return retour;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 
 }

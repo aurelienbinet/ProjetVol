@@ -5,8 +5,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import jdbc.util.Closer;
-import jdbc.util.Context;
+import util.Closer;
+import util.Context;
 import jdbc_projetvol_dao.SQLRequest_Insert;
 import model.Adresse;
 import model.Passager;
@@ -31,7 +31,7 @@ public class DaoPassagerImpl implements DaoPassager {
 			e.printStackTrace();
 		} finally {
 			util.Closer.closeResultSet(rs);
-			util.Closer.closeResultSet(rs);
+			util.Closer.closeStatement(st);
 		}
 		return passagers;
 	}
@@ -59,13 +59,13 @@ public class DaoPassagerImpl implements DaoPassager {
 	@Override
 	public void insert(Passager obj) {
 		sql.SQLRequest_Insert requetes = new sql.SQLRequest_Insert();
-		obj.setId((long) requetes.insertPassager(util.Context.getInstance(), obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getVille()));
+		obj.setId((long) requetes.insertPassager(Context.getInstance(), obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getVille()));
 	}
 
 	@Override
 	public Passager update(Passager obj) {
 		SQLRequest_Update requetes = new SQLRequest_Update();
-		requetes.updatePassager(util.Context.getInstance(),  obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getVille());
+		requetes.updatePassager(Context.getInstance(),  obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getVille());
 		return obj;
 	}
 	

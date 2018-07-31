@@ -2,7 +2,7 @@ package model;
 
 public class ClientPhysique extends Client {
 
-	private String titre = "TitrePhysique";
+	private String titre;
 	private String prenom;
 
 	public ClientPhysique() {
@@ -11,14 +11,22 @@ public class ClientPhysique extends Client {
 	}
 
 	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
-			Adresse adresse) {
+			Adresse adresse, String titre) {
 		super(nom, numeroTel, numeroFax, email, adresse);
 		this.prenom = prenom;
+		this.titre = titre;
 	}
 
 	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
-			Adresse adresse, Login login) {
+			Adresse adresse, Login login, String titre) {
 		super(nom, numeroTel, numeroFax, email, adresse, login);
+		this.prenom = prenom;
+		this.titre = titre;
+	}
+
+	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
+			Adresse adresse) {
+		super(nom, numeroTel, numeroFax, email, adresse);
 		this.prenom = prenom;
 	}
 
