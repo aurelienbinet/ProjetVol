@@ -1,23 +1,13 @@
 package sql;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 import util.Context;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-<<<<<<< HEAD
-import java.sql.PreparedStatement;
-=======
-
-
 import java.sql.PreparedStatement;
 
-
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
+import java.sql.PreparedStatement;
 
 public class SQLRequest_Select {
 	private final static String FIND_ALL_CLIENT = "select * from client";
@@ -30,8 +20,6 @@ public class SQLRequest_Select {
 	private final static String FIND_RESERVATION_BY_ID = "select * from reservation where id_reservation=?";
 	private final static String FIND_ALL_PASSAGER = "select * from passager";
 	private final static String FIND_PASSAGER_BY_ID = "select * from passager where id_passager=?";
-
-
 
 	// SELECTIONNER UN CLIENT AVEC UN ID
 	public ResultSet selectClientByKey(Context ctx, Long id_client) {
@@ -47,8 +35,6 @@ public class SQLRequest_Select {
 		return rs;
 	}
 
-
-
 	// SELECTIONNER UN LOGIN AVEC UN ID
 	public ResultSet selectLoginByKey(Context ctx, Long id_login) {
 		PreparedStatement ps = null;
@@ -62,8 +48,6 @@ public class SQLRequest_Select {
 		}
 		return rs;
 	}
-
-
 
 	// SELECTIONNER UN VOL AVEC UN ID
 	public ResultSet selectVolByKey(Context ctx, Long id_vol) {
@@ -79,8 +63,6 @@ public class SQLRequest_Select {
 		return rs;
 	}
 
-
-
 	// SELECTIONNER UNE RESERVATION AVEC UN ID
 	public ResultSet selectReservationByKey(Context ctx, Long id_reservation) {
 		PreparedStatement ps = null;
@@ -94,8 +76,6 @@ public class SQLRequest_Select {
 		}
 		return rs;
 	}
-
-
 
 	// SELECTIONNER UN PASSAGER AVEC UN ID
 	public ResultSet selectPassagerByKey(Context ctx, Long id_passager) {

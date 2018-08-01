@@ -15,20 +15,12 @@ public class SQLRequest_Update {
 	private final static String UPDATE_LOGIN = "update login set login=?,motDePasse=?,admin=? where id_login=?";
 	private final static String UPDATE_VOL = "update vol set date_Depart=?,date_Arrivee=?,heure_Depart=?,heure_Arrivee=? where id_vol=?";
 	private final static String UPDATE_RESERVATION = "update reservation set date=?,numero=? where id_reservation=?";
-<<<<<<< HEAD
-	private final static String UPDATE_PASSAGER = "update passager set nom=?,prenom=? where id_passager=?";
-=======
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d3ddf2148325f0c8cb7c76140761fbbc7aafc9e2
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 	private final static String UPDATE_PASSAGER = "update passager set nom_passager=?,prenom_passager=?,adresse_passager=?,cp_passager=?,ville_passager=?,pays_passager=? where id_passager=?";
 
 	// UPDATE CLIENT
-	public int updateClientPhysique(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
-			String cp, String ville, String pays, String titre) {
+	public int updateClientPhysique(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax,
+			String email, String adresse, String cp, String ville, String pays, String titre) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
@@ -51,8 +43,9 @@ public class SQLRequest_Update {
 		}
 		return retour;
 	}
-	public int updateClientMoral(Context ctx, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
-			String cp, String ville, String pays,String siret, String titre) {
+
+	public int updateClientMoral(Context ctx, String nom, Integer numeroTel, Integer numeroFax, String email,
+			String adresse, String cp, String ville, String pays, String siret, String titre) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
@@ -75,8 +68,9 @@ public class SQLRequest_Update {
 		}
 		return retour;
 	}
-	public int updateClientEl(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax, String email, String adresse,
-			String cp, String ville, String pays, String titre) {
+
+	public int updateClientEl(Context ctx, String prenom, String nom, Integer numeroTel, Integer numeroFax,
+			String email, String adresse, String cp, String ville, String pays, String titre) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
@@ -175,9 +169,5 @@ public class SQLRequest_Update {
 		}
 		return retour;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 
 }
