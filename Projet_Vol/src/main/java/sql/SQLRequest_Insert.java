@@ -195,30 +195,20 @@ public class SQLRequest_Insert {
 	}
 
 	// INSERER UN PASSAGER
-<<<<<<< HEAD
-	public int insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager,
-=======
+
 
 	public Long insertPassager(Context ctx, String nom_passager, String prenom_passager, String adresse_passager,
 
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
+
 			String cp_passager, String ville_passager, String pays_passager) {
 		PreparedStatement ps = null;
 		Statement st = null;
 		Long numeroGenere = (long) -1;
 		ResultSet rs = null;
 		try {
-<<<<<<< HEAD
 			ps = ctx.getConnection().prepareStatement(INSERT_PASSAGER);
 			ps.setString(1, nom_passager);
 			ps.setString(2, prenom_passager);
-=======
-
-			ps = ctx.getConnection().prepareStatement(INSERT_PASSAGER);
-			ps.setString(1, nom_passager);
-			ps.setString(2, prenom_passager);
-
->>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 			ps.setString(3, adresse_passager);
 			ps.setString(4, cp_passager);
 			ps.setString(6, ville_passager);
