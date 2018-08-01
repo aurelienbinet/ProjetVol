@@ -32,15 +32,15 @@ public class DaoClientImpl implements DaoClient {
 			while (rs.next()) {
 
 				if (rs.getString("typeClient").equals("P")) {
-					clients.add(new ClientPhysique(rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"),
+					clients.add(new ClientPhysique(rs.getString("typeClient"),rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"),
 							rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"),
 							(Login) rs.getObject("login"), rs.getString("titre")));
 				} else if (rs.getString("typeClient").equals("M")) {
-					clients.add(new ClientMoral(rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"),
+					clients.add(new ClientMoral(rs.getString("typeClient"),rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"),
 							rs.getString("email"), (Adresse) rs.getObject("adresse"), rs.getString("siret"),
 							rs.getString("titre")));
 				} else {
-					clients.add(new ClientEl(rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"),
+					clients.add(new ClientEl(rs.getString("typeClient"),rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"),
 							rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"),
 							(Login) rs.getObject("login"), rs.getString("titre")));
 				}
@@ -64,11 +64,11 @@ public class DaoClientImpl implements DaoClient {
 			st = rs.getStatement();
 			if (rs.next()) {
 				if(rs.getString("typeClient").equals("P")) {
-					client = new ClientPhysique(rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), (Login) rs.getObject("login"), rs.getString("titre"));
+					client = new ClientPhysique(rs.getString("typeClient"),rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), (Login) rs.getObject("login"), rs.getString("titre"));
 				} else if(rs.getString("typeClient").equals("M")) {
-					client = new ClientMoral(rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), rs.getString("siret"), rs.getString("titre"));
+					client = new ClientMoral(rs.getString("typeClient"),rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), rs.getString("siret"), rs.getString("titre"));
 				} else {
-					client = new ClientEl(rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), (Login) rs.getObject("login"), rs.getString("titre"));
+					client = new ClientEl(rs.getString("typeClient"),rs.getString("prenom"), rs.getString("nom"), rs.getInt("numeroTel"), rs.getInt("numeroFax"), rs.getString("email"), (Adresse) rs.getObject("adresse"), (Login) rs.getObject("login"), rs.getString("titre"));
 				}
 			}
 		} catch (Exception e) {

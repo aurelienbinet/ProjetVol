@@ -35,7 +35,7 @@ public class DaoReservationImpl implements DaoReservation {
 		try {
 			st = rs.getStatement();
 			while(rs.next()) {
-				reservation.add(new Reservation (rs.getDate("date"), rs.getInt("numero"), (Passager) rs.getObject("passager"), (Client) rs.getObject("client"), (Vol) rs.getObject("vol")));
+				reservation.add(new Reservation (rs.getDate("date"), rs.getLong("numero"), (Passager) rs.getObject("passager"), (Client) rs.getObject("client"), (Vol) rs.getObject("vol")));
 			}} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -57,7 +57,7 @@ public class DaoReservationImpl implements DaoReservation {
 		try {
 			st = rs.getStatement();
 			if(rs.next()) {
-				reservation = new Reservation(rs.getDate("date"), rs.getInt("numero"), (Passager) rs.getObject("passager"),(Client) rs.getObject("client"), (Vol) rs.getObject("vol"));
+				reservation = new Reservation(rs.getDate("date"), rs.getLong("numero"), (Passager) rs.getObject("passager"),(Client) rs.getObject("client"), (Vol) rs.getObject("vol"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

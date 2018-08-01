@@ -10,23 +10,23 @@ public class ClientPhysique extends Client {
 
 	}
 
-	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
+	public ClientPhysique(String typeClient,String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
 			Adresse adresse, String titre) {
-		super(nom, numeroTel, numeroFax, email, adresse);
+		super(typeClient, nom, numeroTel, numeroFax, email, adresse);
 		this.prenom = prenom;
 		this.titre = titre;
 	}
 
-	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
+	public ClientPhysique(String typeClient,String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
 			Adresse adresse, Login login, String titre) {
-		super(nom, numeroTel, numeroFax, email, adresse, login);
+		super(typeClient, nom, numeroTel, numeroFax, email, adresse, login);
 		this.prenom = prenom;
 		this.titre = titre;
 	}
 
-	public ClientPhysique(String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
+	public ClientPhysique(String typeClient, String prenom, String nom, Integer numeroTel, Integer numeroFax, String email,
 			Adresse adresse) {
-		super(nom, numeroTel, numeroFax, email, adresse);
+		super(typeClient, nom, numeroTel, numeroFax, email, adresse);
 		this.prenom = prenom;
 	}
 

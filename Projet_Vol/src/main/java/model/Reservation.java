@@ -6,7 +6,7 @@ public class Reservation {
 
 	private Long id_reservation;
 	private Date date;
-	private Integer numero;
+	private Long numero;
 	private Passager passager;
 	private Client client;
 	private Vol vol;
@@ -15,7 +15,7 @@ public class Reservation {
 		super();
 	}
 
-	public Reservation(Date date, Integer numero, Passager passager, Client client, Vol vol) {
+	public Reservation(Date date, Long numero, Passager passager, Client client, Vol vol) {
 		super();
 		this.date = date;
 		this.numero = numero;
@@ -32,11 +32,11 @@ public class Reservation {
 		this.date = date;
 	}
 
-	public Integer getNumero() {
+	public Long getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
 

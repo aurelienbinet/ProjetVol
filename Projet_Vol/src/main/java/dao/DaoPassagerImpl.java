@@ -5,9 +5,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import util.Closer;
+
 import util.Context;
-import jdbc_projetvol_dao.SQLRequest_Insert;
+
 import model.Adresse;
 import model.Passager;
 import sql.SQLRequest_Delete;

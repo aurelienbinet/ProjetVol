@@ -4,6 +4,7 @@ public abstract class Client {
 
 
 	private Long id_client;
+	private String typeClient;
 	private String nom;
 	private Integer numeroTel;
 	private Integer numeroFax;
@@ -11,8 +12,9 @@ public abstract class Client {
 	private Adresse adresse;
 	private Login login;
 
-	public Client(String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse) {
+	public Client(String typeClient,String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse) {
 		super();
+		this.typeClient = typeClient;
 		this.nom = nom;
 		this.numeroTel = numeroTel;
 		this.numeroFax = numeroFax;
@@ -20,8 +22,9 @@ public abstract class Client {
 		this.adresse = adresse;
 	}
 
-	public Client(String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse, Login login) {
+	public Client(String typeClient, String nom, Integer numeroTel, Integer numeroFax, String email, Adresse adresse, Login login) {
 		super();
+		this.typeClient = typeClient;
 		this.nom = nom;
 		this.numeroTel = numeroTel;
 		this.numeroFax = numeroFax;
@@ -93,5 +96,13 @@ public abstract class Client {
 		this.login = login;
 	}
 
+	public String getTypeClient() {
+		return typeClient;
+	}
 
+	public void setTypeClient(String typeClient) {
+		this.typeClient = typeClient;
+	}
+
+	
 }

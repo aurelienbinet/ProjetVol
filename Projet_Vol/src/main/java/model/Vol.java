@@ -57,5 +57,9 @@ public class Vol {
 	public Long getId() {
 		return id_vol;
 	}
+	
+	public void setId(Long id_vol) {
+		this.id_vol=id_vol;
+	}
 
 }

@@ -131,13 +131,13 @@ public class SQLRequest_Update {
 	}
 
 	// UPDATE RESERVATION
-	public int updateReservation(Context ctx, Date date, Integer numero) {
+	public int updateReservation(Context ctx, Date date, Long numero) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
 			ps = ctx.getConnection().prepareStatement(UPDATE_RESERVATION);
 			ps.setDate(1, date);
-			ps.setInt(2, numero);
+			ps.setLong(2, numero);
 			retour = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
