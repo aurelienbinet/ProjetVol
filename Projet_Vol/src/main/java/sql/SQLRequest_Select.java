@@ -1,16 +1,23 @@
 package sql;
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 import util.Context;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+<<<<<<< HEAD
+import java.sql.PreparedStatement;
+=======
 
 
 import java.sql.PreparedStatement;
 
 
+>>>>>>> 05c768e315b0dafe59da88b35ba1ff76ec335c31
 
 public class SQLRequest_Select {
 	private final static String FIND_ALL_CLIENT = "select * from client";
